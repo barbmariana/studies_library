@@ -213,3 +213,22 @@ hello : hello.c
 clean : 
         rm hello test.o
 
+
+## Signals in Linux
+
+Library : signal.h
+signaction --> type to create handlers
+We can use a handler to change a signal function by using signal(SIGUSR, handler)
+
+SIGINT - ctrl + c
+SIGIGN - ignore signal
+SIGKILL - kill terminal kill(target process id, signal number)
+CMD --> kill -TERM <PID>
+sleep(1) --> take a moment to continue
+
+
+
+### Socket
+Used for communication in Client-Server Systems. Is a endpoint for communication.
+
+Is indetified by an IP address concatenated with a port number
