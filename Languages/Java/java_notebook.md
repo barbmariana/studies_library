@@ -45,26 +45,28 @@ double weight = 62.5;
 double imc = weight / height*height;
 ``
 
-## Tipos Primitivos
+## Primary types
 
-Inteiros: Int (32bits), Long(64bits), Short(16bits), Byte(8bits).
+Integers: Int (32bits), Long(64bits), Short(16bits), Byte(8bits).
 Floats: Float(32 bits), Double(64bits)
-Caractere Unicode: char (16 bits)
-Valor Verdade : boolean (1bit)
+Caracter Unicode: char (16 bits)
+True or false value: boolean (1bit)
 
-## Tipos não primitivos
-String : Cadeia de Caracteres - Sempre com S maiusculo
+## Non primary types
+String : string of characters - always with caps S.
 String str = "teste";
-ou
-String str1 = new String("teste"); --> Cada vez que você chama ele criará um novo objeto
-Array: Sequencia de qualquer coisa, numeros, caracteres. Mas sempre de forma homogênea, todos do mesmo tipo. 
-int arr[]; --> declara o array
-arr = new int[2]; --> declara o tamanho do array
-Se eu coloco para imprimir o array, ele imprimirá o local da memória, posso imprimir letra por letra. 
+or
+String str1 = new String("teste"); --> each time you call this a new object it's going to be created
+Array: Sequence of any type, but always with a single type.
 
-## Operações Básicas de Programa
+int arr[]; --> declare the array
+arr = new int[2]; --> declare the size array
+If I print the array, it will print the local of the memory, thats why I can print letter by letter.
 
-Entrada de Dados - Entrada por dispositivos de entrada - leitura
+
+## Basic operations
+
+Data entry - entry devices - reading
 Processamento de Dados - Dentro do processador, onde calculos são realizados.
 Saída de Dados - Saída por dispositivos de Saída - Escrita
 
