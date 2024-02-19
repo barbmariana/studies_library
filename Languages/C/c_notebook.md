@@ -197,7 +197,7 @@ int     main()
 ``
 
 
-# Makefile
+## Makefile
 Describe how a program should be build.
 You can add rules with targets and the code i should run to execute de rule, example:
 
