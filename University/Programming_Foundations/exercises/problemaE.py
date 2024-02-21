@@ -7,3 +7,4 @@ totalSalary = float((sperHour * wHours))
 print("NUMBER = %d" %eNumber)
 print("SALARY = U$ %.2f" %totalSalary)
 
+print("NUMBER =", eNumber, "SALARY =", totalSalary)

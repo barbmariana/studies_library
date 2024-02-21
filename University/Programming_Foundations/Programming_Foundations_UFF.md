@@ -141,6 +141,8 @@ print("DIFERENCA = %d" %difs)
 ou
 
 print("A soma =', soma, "e o Produto =', prod)
+print("NUMBER =", eNumber, "SALARY =", totalSalary)
+
 
 ## Sequência de Comandos
 
@@ -158,9 +160,88 @@ if <condicao>:
         <execucao>
 
 
+## Estrutura de seleção composta
 
+if(valor >= 10) and (valor <=20):
+        print...
+if 10<= valor <=20:
+if (valor < 0) or (valor > 30):
+        print...
 
+# Estrutura seleção com dois ramos
 
+if <condicao>:
+        ...
+else:
+        ...
+
+# Estrutura de seleção aninhadas
+
+if <condicao> :
+        ...
+elif <condicao>:
+        ...
+else:
+        ...
+
+# Split
+Divide a string, considerando o espaço em branco como separador, em uma lista de substrings
+
+valores = input("Entre com dois números:").split()
+x = int(valores[0])
+y = int(valores[1])
+
+# None
+
+É o tipo nenhum. Ele denota falta de valor.
+
+# Estrutura de repetição indefinida (WHILE)
+Utilizamos mais quando queremos utilizar comandos em vezes inderteminadas. Então colocamos uma expressão que deverá ser executada enquanto a condição for verdadeira.
+
+while <condicao>:
+        <suite>
+
+ex:
+num = int(input("fale um numero: "))
+i = 1
+fat = 1
+while i <=num:
+        fat = fat * i
+        i = 1 + 1
+print(fat)
+
+# Estrutura de repetição definida (FOR)
+É utilizada quando sabemos os números de repetições
+
+for <var> in <list>:
+        <suite>
+A cada repetição, var assume o valor do item
+
+for item in {3, 4, 5, 6}:
+        print(item, end=" ")
+print()  //aqui ele pula a última linha
+
+# Range
+Para criar uma lista com uma progressão aritmética de elementos, podemos utilizar range
+
+range(valor limite) - Cria uma lista com progressão dos itens de razão 1 iniciada no zero até o limite, lembrando que ele segue até o valor que antecede o limite. 
+
+ex : 
+range(5) [0, 1, 2, 3, 4]
+
+range(valor inicial, valor limite)
+ex:
+range(8, 13) [8, 9, 10, 11, 12]
+
+range (valor inicial, valor limite, avanço)
+ex:
+range(1, 7, 2) [1, 3, 5]
+range(5, -14, -3) [5, 2, -1, -4, -7, -10, -13]
+
+num = int(input("digite um num"))
+fat = 1
+for i in range(1, num+1):
+        fat = fat * i
 
 
 
