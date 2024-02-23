@@ -1,9 +1,11 @@
+# print bigger number
 def printBigger(nList, lastNum, listSize):
     for index in range(0, listSize):
         if float(nList[index]) > float(lastNum):
             print(nList[index])
 
 
+# Main program
 entry = input("Type a number: ")
 newList = []
 i = 0

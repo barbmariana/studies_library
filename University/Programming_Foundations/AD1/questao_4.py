@@ -1,3 +1,4 @@
+# function that return the maximum ways
 def countWays(n):
     if n == 0 or n == 1:
         return 1
@@ -11,6 +12,8 @@ def countWays(n):
         ways[i] = ways[i - 1] + ways[i - 2]
     return ways[n]
 
+
+# main program
 
 numberOfSteps = int(input("How many steps: "))
 if numberOfSteps < 0:

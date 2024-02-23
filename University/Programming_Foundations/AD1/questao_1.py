@@ -1,17 +1,18 @@
+# Make letters upperCase
 def upperCase(str_element):
     if 97 <= ord(str_element) <= 122:
         return chr(ord(str_element) - 32)
     return str_element
 
 
+# Make letters lowerCase
 def lowerCase(str_element):
     if 65 <= ord(str_element) <= 90:
         return chr(ord(str_element) + 32)
     return str_element
 
 
-# Principal Program
-
+# Main Program
 letter = input("Type a letter: ")
 phrase = input("Type the phrase: ")
 letterLower = lowerCase(letter)

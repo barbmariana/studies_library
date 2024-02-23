@@ -1,8 +1,10 @@
+# Initiate List
 def createList():
     newList = list()
     return newList
 
 
+# Find the smallest number
 def findSmallest(newList, qtt):
     pos = 0
     index = 0
@@ -13,6 +15,7 @@ def findSmallest(newList, qtt):
     return pos
 
 
+# find the biggest number
 def findGreatest(newList, qtt):
     pos = 0
     for item in range(qtt):
@@ -21,6 +24,7 @@ def findGreatest(newList, qtt):
     return pos
 
 
+# Find the media
 def findMedia(newList, qtt):
     soma = 0
     for item in newList:
@@ -28,6 +32,8 @@ def findMedia(newList, qtt):
     m = soma / qtt
     return m
 
+
+# Main program
 
 quantity = int(input("Quantos números irá inserir: "))
 nList = createList()
