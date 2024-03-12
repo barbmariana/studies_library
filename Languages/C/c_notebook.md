@@ -178,6 +178,14 @@ Arrays that need two loops and add two information
 
 Datatype	namedArray [row_size] [column_size]
 
+int marks[][10];
+
+int a[2][3] = {{0,0,0}, {1, 1, 2}}
+int a[2][3]={
+	{},
+	{}
+}
+
 
 ## Macros in C
 We can define Macros before the program using Define. It's better to define constants and use the pre-processor to save time from the compile time and the execution time. 
@@ -195,6 +203,50 @@ int     main()
         printf("%d", PRODUCT(a,b));
 }
 ``
+
+## Strings
+
+## Linked List
+
+- one space to variable and one that saves a pointer to the next node
+
+``
+Struct node
+{
+	int a,
+	struct node * next,
+}
+``
+
+-Singly LL - 2 bytes, Data and adress(adress next node)
+- Doubly LL
+- Circular LL
+- Doubly Circular LL
+
+Singly LL:
+Data | adress(pointer next)
+
+Doubly LL:
+Two pointers to previous and next;
+First and last have null adress;
+
+struct node
+{
+	int data;
+ 	struct node * next;
+  	struct node * prev;
+}
+
+## Header files
+- code that we like to share with other code
+- put a declaration of a function that i'd like to use so my program will know where to find
+- even though i have the declarations in the header file, i must have all the compile files to do the correct linking. Just the linking wont be enough to run the program. So if you have a program that calls other functions you need all of them compiled
+- if you just include the funcion in your program, you dont need to compile it manually, but this is not a good practice because everytime you change a function everything will be recompile and imagine having so many includes it will not be good for organization
+
+
+#ifndef
+#define
+#endif
 
 
 ## Makefile
