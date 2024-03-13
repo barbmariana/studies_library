@@ -291,7 +291,7 @@ Idéia intuitiva -> Se algo vale para o caso base ele vai valer para todos os pr
 
 seja P(n) uma afirmação, para cada n pertencente a N
 P(1) verdadeira e
-P(k) verdadeira -> P(k + 1)
+P(k) verdadeira -> P(k + 1) verdadeira
 P(n) é verdadeira para todo n pertencente a Naturais
 
 1 - Base da indução:
@@ -315,7 +315,7 @@ P(1) = 1(1+1) / 2 = 1 VERDADEIRA
 2 - Hipótese de indução (HI) - Assuma que P(k) é verdadeira, k >=1
 P(k) = k(k+1) / 2
 
-3 - Passo indutivo - se P(k) é verdadeiro P(k + 1) é verdadeiro
+3 - Passo indutivo - se P(k) é verdadeiro P(k + 1) é verdadeiro. podemos substituir a parte de k com o que vimos na hipótese 2 já que ela é verdadeira
 
 soma de K = k(k + 1) / 2
 soma de K + 1 = k(k + 1)/ 2 + k + 1
@@ -328,6 +328,8 @@ k^2 + 3k + 2 ->
 Então pelo pim P(n) = n(n + 1) / 2 -> verdadeiro
 
 ![alt text](image-11.png)
+![alt text](image-12.png)
+
 
 
 ## Indução Forte
