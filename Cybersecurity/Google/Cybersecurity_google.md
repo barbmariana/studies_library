@@ -206,3 +206,49 @@ Security governance: Practices that help support, define, and direct security ef
 
 Sensitive personally identifiable information (SPII): A specific type of PII that falls under stricter handling guidelines
 
+## Tools used in security 
+
+- Mitigar os riscos
+- Log: A log is a record of events that occur within an organization's systems. 
+
+- Logs help security professionals identify vulnerabilities and potential security breaches
+
+- SIEM tools: Security information and event management tools. Essa ferramenta coleta e analisa log data para monitorar atividades criticas. 
+
+- SIEM tools reduce the amount of data an analyst must review by providing alerts for specific types of risks and threats
+
+### Common Siem Tools
+
+- Splunk : plataforma de data analise. Retem, analisa, procura e organiza log data
+- Google Chronicle: cloud native SIEM tool. that stores security data for search and analysis. Cloud-native means that Chronicle allows for fast delivery of new features.
+
+Both of these SIEM tools, and SIEMs in general, collect data from multiple places, then analyze and filter that data to allow security teams to prevent and quickly react to potential security threats.
+
+- SIEM tools reduce the amount of data an analyst must review by providing alerts for specific types of threats, risks, and vulnerabilities
+
+### Playbook
+
+- a manual that provides details about any operational action, such as how to respond to an incident. Playbooks can pertain to security or compliance reviews, access management, and many other organizational tasks that require a documented process from beginning to end.
+
+### Network protocol analyzer - Packet sniffer
+
+- Tool designed to capture and analyze data traffic within a network. 
+- TCPdump and Wireshark
+
+- A network protocol analyzer, also known as a packet sniffer, is a tool designed to capture and analyze data traffic in a network. This means that the tool keeps a record of all the data that a computer within an organization's network encounters
+
+### Programming
+
+- Organizations can use programming to create a specific set of instructions for a computer to execute tasks. Programming allows analysts to complete repetitive tasks and processes with a high degree of accuracy and efficiency
+
+- Automation is the use of technology to reduce human and manual effort in performing common and repetitive tasks. Automation also helps reduce the risk of human error.
+
+- It also helps reduce the risk of human error, and can save hours or days compared to performing the work manually.
+
+- Linux :  Open source, relies on a command line as the primary yser interface.
+
+- SQL : SQL is a programming language used to create, interact with, and request information from a database. A database is an organized collection of information or data. There may be millions of data points in a database.
+
+- Python : Security professionals can use Python to perform tasks that are repetitive and time-consuming and that require a high level of detail and accuracy.
+
+- An intrusion detection system (IDS) is an application that monitors system activity and alerts on possible intrusions. The system scans and analyzes network packets, which carry small amounts of data through a network.

@@ -68,3 +68,50 @@ Undefined ocorre quando o valor é não definido. Null é quando o valor está v
 ? : -> ternário
 
 
+## Funções
+
+function nomeFuncao(parametro)
+{
+        return...
+}
+const nomeFuncao = (parametro) => {
+
+}
+
+const nomeFuncao = function(parametro) {
+
+}
+
+## Arrays
+São listas de dados guardadas em uma mesma variável. São dados do mesmo tipo(em estrutura de dados, mas não em js)
+
+
+const notas = [10, 6.5, 8, 7.5]
+Cada item é acessado por seu index. Iniciando do zero.
+
+.lenght() - retorna tamanho array
+.push() - adiciona item no final da lista
+podemos adicionar também pelo indice
+.pop() - removemos um item do final da lista
+Podemos dar push e pop em variáveis consts, elas só não podem ser reatribuidas
+
+.slice():
+Criar novas listas a partir de uma.
+Parametros - inicio, fim(opcional)
+variavel = .slice(inicio, fim) - o fim é opcional. O paramatro de fim determina que o slice vai até um item antes desse fim
+
+.splice():
+Forma de manipular lista. Deletamos os elementos da própria lista. Podemos adicionar elementos na lista também. 
+Parametros  - inicio, numero de elementos, elemento incluido(opcional)
+variavel.splice(1, 2, "nome") - > vai retirar o item 1 e 2 e adicionar o nome. 
+
+.concat():
+Concateno dois arrays e insiro em um novo array. 
+const novaVariavel = nomeVariavel.concat(nomeVariavel2);
+
+
+Array duas dimensões:
+const alunos
+const medias
+const lista = [alunos, medias];
+Para acessar basta usar variavel[][]
