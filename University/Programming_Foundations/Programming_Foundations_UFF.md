@@ -168,14 +168,14 @@ if 10<= valor <=20:
 if (valor < 0) or (valor > 30):
         print...
 
-# Estrutura seleção com dois ramos
+### Estrutura seleção com dois ramos
 
 if <condicao>:
         ...
 else:
         ...
 
-# Estrutura de seleção aninhadas
+### Estrutura de seleção aninhadas
 
 if <condicao> :
         ...
@@ -184,18 +184,18 @@ elif <condicao>:
 else:
         ...
 
-# Split
+## Split
 Divide a string, considerando o espaço em branco como separador, em uma lista de substrings
 
 valores = input("Entre com dois números:").split()
 x = int(valores[0])
 y = int(valores[1])
 
-# None
+## None
 
 É o tipo nenhum. Ele denota falta de valor.
 
-# Estrutura de repetição indefinida (WHILE)
+## Estrutura de repetição indefinida (WHILE)
 Utilizamos mais quando queremos utilizar comandos em vezes inderteminadas. Então colocamos uma expressão que deverá ser executada enquanto a condição for verdadeira.
 
 while <condicao>:
@@ -210,7 +210,7 @@ while i <=num:
         i = 1 + 1
 print(fat)
 
-# Estrutura de repetição definida (FOR)
+## Estrutura de repetição definida (FOR)
 É utilizada quando sabemos os números de repetições
 
 for <var> in <list>:
@@ -221,10 +221,13 @@ for item in {3, 4, 5, 6}:
         print(item, end=" ")
 print()  //aqui ele pula a última linha
 
-# Range
-Para criar uma lista com uma progressão aritmética de elementos, podemos utilizar range
+## Range
 
-range(valor limite) - Cria uma lista com progressão dos itens de razão 1 iniciada no zero até o limite, lembrando que ele segue até o valor que antecede o limite. 
+- Para criar uma lista com uma progressão aritmética de elementos, podemos utilizar range
+
+- range(valor limite) - Cria uma lista com progressão dos itens de razão 1 iniciada no zero até o limite, lembrando que ele segue até o valor que antecede o limite. 
+
+- Sempre vai até valores que antecedem limites
 
 ex : 
 range(5) [0, 1, 2, 3, 4]
@@ -244,6 +247,82 @@ for i in range(1, num+1):
         fat = fat * i
 
 
+## Subprogramação :  Funções
 
+- permite que diferentes partes do programa possam ser desenvolvidas e testadas separadamente
 
+- trata-se de grupos de sentenças, suite, comando de controles ao qual é atribuido nome e retorna valor
+
+def nomeFunção(lista de parametros):
+        suite do corpo da função
+
+A suite pode ter zero ou mais retornos de valores, se não tiver valor podemos botar return ; ou return none
+
+- Elas devem ser declaradas antes de serem utilziadas, portanto deve ficar acima do prorama principal.
+
+def mult(x, y):
+        z = 0
+        for u in range(x):
+                z = z + y
+        return z;
+
+- No início da função os parametros sempre são inicializados com cópia de referencias(ponteiros) para os valores passados na ativação da função
+
+- os valores podem vir de constantes, variáveis, resultados de funções
+
+def trocar(valores, pos1, pos2):
+        if 0 <= pos1 < len(valores) and 0 <= pos2 < len(valores):
+                temp = valores[pos1]
+                valores[pos1] = valores[pos2]
+                valores[pos2] = temp
+        return None;
+
+- A passagem de parametro ocorre como se o primeiro argumento substituisse o parametro dentro do escopo da função
+
+- Não precisamos retornar nada porque a função é uma função de ação, ela realiza apenas a troca
+
+- Podemos fazer funções com funções como parâmetros
+
+def soma(f, n):
+        parcial = 0
+        for in in range(1, n + 1):
+                parcial = parcial+f(ind)
+        return parcial
+
+## Escopo de identificador em Python
+
+- Parâmetros de variáveis locais e as funções declaradas internamente a uma função definem identificadores que são locais a esta função, isto é: tem escopo local
+
+- Estes identificadores não podem ser utilizados fora da respectiva função, isto é, não são visíveis em outra parte do programa
+
+- identificador é chamado global se nomeamos como global e tem o mesmo valor no programa inteiro
+- identificador local só vale dentro de subprogramas e blocos
+
+- variáveis globais podem ser visualizadas dentro de subprogramas mas não podem ser alteradas nos mesmos
+
+- se tivermos a mesma variavel como global e como local, a que passa a valer é a mais local. 
+
+z**3 é ao cubo
+
+## Rescursividade
+
+- uma função possui no seu corpo uma chamada de si própria
+- É uma repetição mas sem estruturas de repetição
+- exemplo fatorial:
+
+de fat(n):
+        if n >= 1:
+                return 1;
+        else
+                return n * fat(n - 1)
+
+- exemplo iterativo
+
+def fat(n):
+        p = 1
+        for i in range(1, n+1)
+                p = p * i
+        return p;
+
+## Estrutura de dados
 

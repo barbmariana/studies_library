@@ -331,10 +331,200 @@ Então pelo pim P(n) = n(n + 1) / 2 -> verdadeiro
 ![alt text](image-12.png)
 
 
+### Aula youtube
+
+A soma dos n primeiros numeros impares = n^2
+
+Base indutiva: O 1º dominó cairá
+Passo indutivo : Se um dominó cair então o seguinte também irá cair
+
+Numero impar n = 2n - 1;
+
+1, 3, 5 ... (2n -1) = n^2
+
+Base: 1 = 1^2 OK
+Hipótese : Funciona para um determinado valor de n = k;
+Tese: Provar se funciona para k funciona para k + 1;
+
+O próximo numero impar é duas unidades maior, 2k + 1
+
+1 + 3 ... 2k - 1 = k^2
+1 + 3 ... 2k - 1 + (2k -1 +2) = (k + 1)^2
+________________
+        ||
+        k^2 + 2k + 1 = k^2 + 2k + 1;
+
+
+### Sequencia de fibonnaci
+
+Fn + F(n +1) = F(n + 2);
+
+
+
+
+
 
 ## Indução Forte
 
 
 
- 
+Sequência de Fibonatti:
 
+Fn n>= 3 é calculado recursivamente...
+
+1, 1, 2, (2 + 1) = 3, (2 + 3) = 5, (5 + 3) = 8, (8 + 5) = 13
+
+
+ Prova - F1^2 + F2^2 ... + Fn^2 = Fn * Fn+1
+
+ 1 - Base indução - n = 1
+
+ F1^2 = 1;  ==> 1 = 1 * f2(1) = 1
+
+ 2 - Hipótese indução - julgo verdadeiro para k
+
+ 3 -  P(k) é verdadeira, logo P(k + 1)também
+
+f1^2 ... = fk * f k + 1
+
+fk * f(k + 1) + F(k + 1) ^2 = Fk + 1 * Fk + 2
+f(k+1)^2 = F(k+1) * F(k + 2) - F(k) * F(k + 1);
+f(k+1) ^2 = F(k+1) * (F(k + 2) - F(k));
+f(k+1)^2 = F(k+1) * F(k + 1);
+
+
+F(k + 1) = Fk + F(k+1)
+
+
+## Principio Aditivo e multiplicativo
+
+- As vezes não queremos saber quais elementos de conjunto temos e sim enumeralos
+- Ambos esses princípios podem ser utilizados em diferentes tipos de programas, sendo de Permutação, arranjo, combinação
+- Problemas que aparecem em probabilidades, teoria de grafos e análise de algoritmos
+
+Exemplo 1:
+- 4 livros Matematica
+- 3 livros Portugues
+
+a- um livro de mat ou portugues = 4 maneiras pro de mat e 3 de portugues = 4 + 3 maneiras = 7 maneiras
+b - Dois livros, sendo um de mat e um de port = (4 x 3) = 12 maneiras;
+
+
+OU - Aditivo
+E - Multiplicativo
+
+### Principio Aditivo 
+
+- se A e B são conjuntos com interseção vazia, temos A U B = N(A) + N(B)
+São eventos mutusmente exclusivos
+N(A) = |A|
+|A U B | = |A| + |B|
+
+### Principio Multiplicativo
+
+- Se A é conjunto com M elementos e B é conjunto com N elementos, então conjunto |A * B| = |A| x |B|
+- De quantas maneiras uma pessoa pode entrar e sair de um predio de 8 portas : 8 para entrar x 8 para sair = 64
+- e se ela não puder sair pela mesma porta = São 8 pares a menos que não podem existir. 8 * 8 - 8 = 56
+
+O D é o numero de pares que são excluidos das maneiras, nesse caso P1 e P1, P2 e P2... Dando no total 8 pares que não podem acontecer
+|A x A | - |D| ( principio aditivo)
+|A| * |A| - |D| ( principio multiplicativo)
+
+
+### Extensão do princípio aditivo
+
+Se A1, A2 ... An são conjuntos disjuntos dois a dois
+
+Então conjunto possui M1 ... Mn elementos
+
+
+
+## Permutações simples e singulares
+
+- Características gerais de permutação: Elementos são distintos, ordem importa seja na posição ou em relação
+- Fatorial de Número : O fatorial de numero N, denotado por n!, é o produto dos n primeiros numeros naturais.
+- 0! = 1
+
+
+- Permutação Simples:
+        - Elementos são considerados diferentes
+        - Cada troca de posição(ordem) dos elementos corresponde a uma possibilidade ( quando a ordem importa o numero é maior do que se não importasse porque quando a ordem não importa eu preciso ainda dividir). Numeros por exemplo importa ordem, objetos distintos
+        - Na obtenção do número de possibilidades aplica-se os princípios aditivo e multiplicativo
+        - Dado n objetos distintos, uma permutação simples é uma ordenação desses elementos
+        Pn = N!
+
+- Permutação Circular:
+        - Dados N objetos distintos, uma permutação circular é uma ordenação onde o que importa é a posição relativa dos objetos entre si.
+        - quando o que não importa é a ordem e sim a posição entre os elementos
+        - Possibilidades / Numero de lugares
+        - Podemos fazer a divisão dos números de elementos fatorial por o numero de elementos. 
+        Pn = N!/ N ou (N - 1)!
+
+Exemplo:
+
+Uma roda de ciranda 6 crianças : (6 - 1)! = 120 possibilidades
+Uma roda de ciranda 6 crianças sem que c1 e c2 não fiquem juntas:
+        Quatro crianças = 3! = 6 possibilidades
+        Inclusão de C1 = 4 possibilidades
+        Inclousão de C2 = 3 possibilidades
+        Total = 6 * 4 * 3 = 72 rodas diferentes de modo que C1 e C2 não fiquem juntas
+
+
+## Arranjos Simples
+
+        - Elementos diferentes, cada escolha de elementos distintos e ordenados ( a ordem importa) são uma possibilidade
+        - Utilizamos em casos onde o numero de elementos é diferente do numero de pessoas ou posições
+        - Elementos ordenados e distintos tomados de R a R ( posições)
+        - A(n, r) = N! / (N - R)!
+        - A(n,n) = N! = Pn
+        - Exemplo - 1 pessoa, duas portas distintas para entrar e sair, 8 portas - 8 x 9
+
+Exemplo:
+Placa de carro 3 letras e 4 digitos
+26 * 25 * 24 * 10 * 9 * 8 = usamos o aditivo aqui porque cada letra pode distinta vai referenciar uma placa para cada numero
+
+## Combinações Simples
+
+        - Combinação de ELEMENTOS DISTINTOS tomados R a R, SEM ORDEM, cada escolha R elementos corresponde a uma possibilidade
+        - Quando a ordem não é importante
+        - As possibilidades são menores do que quando é arranjo
+        - A pergunta pode ser mudada para "Quantos conjuntos de N elementos está em A"
+        - Podemos fazer a conta do arranjo, que é a combinação de elementos tomado de R em R, mas devemos lembrar de dividir por o numero de permutações entre a tomada Rr, porque as permutações indicam que podem existir subconjuntos iguais. 
+        - C(N, R) = N! / R! (N - R)! = A(N, R)/ Pr
+
+
+## Permutações com Repetição
+
+        - Mesmo numero de elementos para numero de lugares
+        - Elementos que não são diferentes, são indistinguíveis, cada troca de posição(ordem) dos elementos dif corresponde a uma possibilidade
+        - Elementos que ao trocarmos temos o mesmo subconjunto
+        - Primeiro fazemos a permutação entre os elementos totais, sem distinguir igualdade
+        - Segundo dividimos as igualdades
+        - Quando não sabemos a solução podemos dividir em etapas. Misturar permutação de elementos distintintos e combinação de elmenetos iguais
+        - N! / Nrep! x Nrep2!... = Pr
+
+## Arranjos com repetição
+
+        - Os elementos são distintos e a ordem é importante para definir possibilidade.
+        - Os elementos podem se repetir na hora de serem tomados R a R
+        - N = | A x A x A |
+        -  ARn^r = n^r = AR(n, r)
+        - Podemos mesclar elementos separados, usamos o principio multiplicativo quando percebemos que para cada escolha teremos x N possibilidades seguintes do grupo dos outros elementos. Utilizamos a adição quando notamos que podemos escolher uma coisa ou outra coisa.
+
+## Representação Decimal Numeros
+
+30,25 -> 3 x 10^1 + 0 x 10^0 + 2*10^-1 + 5 * 10^-2
+
+
+## Combinação com Repetições
+
+        - Podemos resolver alguns desses problemas com permutação com repetição, caso os elementos e espaços sejam iguais
+        - Se os elementos e espaços não forem iguais usamos combinação com repetição.
+        - Podemos pensar que é como uma permutação onde deixamos alguns numeros parados e movemos os outros
+        - Quando temos valores onde a ordem importa podemos usar 1 e sem ordem 0
+        - N objetos diferentes
+        - Entre N objetos dados escolhem-se R que podem ser repetidos
+        - Associamos o objeto distinto a 1 e o que pode ser repetido a 0
+        - N objetos diferentes, combinação de objetos N tomados R a R é uma seleção de objetos distintos ou não escolhidos entre objetos dados
+        - CRn^r = C(N + R - 1, n - 1);
+        

@@ -98,3 +98,32 @@ Memórias : Responsável por armazenar dados de sistema. Papel crucial na veloci
         
 BIOS : Basic Input Output System - Nosso SO fica lá.
 
+
+## Tipos de Conexão
+
+- A sigla DSL significa Digital Subscriber Line e é uma tecnologia utilizada para a transmissão de dados via rede de telefonia. Neste processo, é utilizada uma linha de telefone fixa para fornecer acesso a internet, servindo como uma evolução do serviço dial-up.
+- A desvantagem apontada para o PLC é equipamentos chamados HomePlug.
+- Internet a cabo: Outra maneira de conexão a internet é através do cabo coaxial, ou cabo trançado.
+
+- Fibra ótica: A conexão de fibra óptica é uma conexão de alta velocidade que se dá através de cabos de vidro ou plástico que realizam a conversão de energia luminosa em elétrica ou sonora. 
+
+## Rede Wan Lan
+
+- Os tipos mais conhecidos de rede de computadores são
+
+        - LAN: Local Area Network, rede local. Compartilhamento de recursos. Controle de acesso. Roteador para rede doméstica e Switch para rede empresarial. 
+        - Man : Metropolitan area network. Tipo de malha de comunicação que cobre grande área geográfica. Ligação Fibra óptica. Grande Largura de Banda
+        - WAN: Wide Area Network, Rede de longa distancia. Utilizada por empresas com VPN(Virtual private network).
+- Para criar rede local precisamos: Determinar quantidade de computadores, quantidade de switch, distancia entre computadores, quantidade de notebooks, definir acesso sem fio, ligar switch em outros
+
+Wireless:
+
+WLAN, WMAN, WPAN, WWAN
+
+-  um switch gerenciável tem a capacidade de ser configurado remotamente e monitorar o tráfego.
+- a principal função de um roteador é encaminhar dados entre redes usando endereços IP.
+- switches operam na camada dois do modelo OSI e utilizam MAC Address.
+
+## IDS e IPS
+
+O IDS (Sistema de Detecção de Intrusão), sistema responsável por monitorar o tráfego de rede e realizar alertas e notificações em caso de ameaças. Outro exemplo é o IPS (Sistema de Prevenção de Intrusão), responsável por fazer o bloqueio ativo do tráfego malicioso, agindo com uma resposta imediata às ameaças. 

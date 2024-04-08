@@ -89,7 +89,7 @@ São listas de dados guardadas em uma mesma variável. São dados do mesmo tipo(
 const notas = [10, 6.5, 8, 7.5]
 Cada item é acessado por seu index. Iniciando do zero.
 
-.lenght() - retorna tamanho array
+.lenght - retorna tamanho array
 .push() - adiciona item no final da lista
 podemos adicionar também pelo indice
 .pop() - removemos um item do final da lista
@@ -115,3 +115,115 @@ const alunos
 const medias
 const lista = [alunos, medias];
 Para acessar basta usar variavel[][]
+
+## Procurando em Lista
+
+lista.includes(nome) -> true ou false
+indice = lista.indexOf(nome)
+
+## Desestruturar
+
+const [alunos, medias] = lista
+Desestruturo o array em dois.
+
+## Percorrer Lista
+
+for(let i = 0; i < tamanholista; i++)
+{
+        ação
+}
+
+reverso:
+
+for (let i = numeros.length - 1; i >= 0; i -= 2) {
+  console.log(numeros[i]);
+}
+
+- Podemos percorrer com for of e temos acesso ao numero do elemento
+
+for(const itens of lista)
+
+let iterable = new Map([["a", 1], ["b", 2], ["c", 3]]);
+
+for (let entry of iterable) {
+  console.log(entry);
+}
+// [a, 1]
+// [b, 2]
+// [c, 3]
+
+for (let [key, value] of iterable) {
+  console.log(value);
+}
+// 1
+// 2
+// 3
+
+for(let [key, value] of nums.entries())
+
+O loop for...in irá iterar sobre todas as propriedades enumeráveis de um objeto. Ele pega as chaves e percorre elas.
+
+A sintaxe do for...of é específica para coleções, ao invés de todos os objetos. Ela irá iterar desta maneira sobre os elementos de qualquer coleção que tiver uma propriedade.
+
+## For each
+
+- Para cada item faça...
+- Recebe função callback
+
+notas.forEach(function(nota){
+        somaNotas += nota;
+})
+
+notas.forEach((nota) =>{
+        somaNotas += nota;
+})
+
+## MAP
+
+- método que podemos usar em array
+- método retorna algo porque ele cria novo array modificado
+
+const novasNotas = notas.map((nota) =>
+{
+        return nota + 1;
+})
+
+## Filter
+
+- retorna array filtrado
+- É método callback
+- Filtra elemento baseado em True e False, ve se questão é true ou falso e devolve apenas os verdadeiros em novo array
+
+const tamanhoNome = aluno.filter((aluno, indice) =>{
+        return aluno.length < 4
+})
+
+## Reduce
+
+- Usado para somar valores
+- recebe dois parametros, uma função callback e um valorInicial para ser somado
+
+
+const somaNotas = lista.reduce((acumulador, nota) =>{
+        return acumulador + nota;
+}, valorInicial)
+
+## Clonando Arrays
+
+- Quando atribuimos uma lista a uma variavel nós não temos o valor do array, temos uma referencia ao array. Assim se mudamos algo alteramos ambos os arrays.
+
+- Podemos usar spread operator. Ele pega o array e espalha em novo array.
+
+const notas = []
+const novaListaNotas = [... notas, 10]
+
+## Remover duplicadas
+
+- Set é conjunto de dados que armazena valores unicos.
+- é array like mas não tem métodos de array
+- Posso retransformar em array.
+
+const nomes = []
+const nomesAtualizados = new Set(nomes);
+const listaNomes = [... nomesAtualizados]
+

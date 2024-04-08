@@ -579,6 +579,8 @@ Operações inválidas:
 - inserção em pilha cheia (overflow)
 - remoção em pilha vazia (underflow)
 
+
+
 Forma de operação:
 - último a entrar é primeiro a sair (LIFO)
 
@@ -848,10 +850,12 @@ X é a chave procurada
 PONT retorna ponteiro para elemento procurado
 ANT retorna ponteiro para elemento anterior ao procurado
 
+```
 procedimento BUSCA_ENC_ORD( X, ANT, PONT )
         ANT : = PTLISTA
         PONT : = λ
         PTR : = PTLISTA↑.PROX   % PTR : ponteiro de percurso
+
         enquanto PTR ≠ λ faça
                 se PTR↑.CHAVE < X
                 então % atualiza ANT e PTR
@@ -862,6 +866,7 @@ procedimento BUSCA_ENC_ORD( X, ANT, PONT )
                         então
                                 PONT : = PTR
                         PTR : = λ
+```
 
 - Complexidade O(n)
 
