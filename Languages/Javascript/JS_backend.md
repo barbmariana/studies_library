@@ -227,3 +227,73 @@ const nomes = []
 const nomesAtualizados = new Set(nomes);
 const listaNomes = [... nomesAtualizados]
 
+## Metodos de string
+
+- Substring() - index de inicio mais um index antes do fim. substring(0, 3) -> pega tres itens
+
+## Objetos
+
+``
+const pessoa = {
+        nome: 'Mariana',
+        idade: 27
+}
+``
+
+- Podemos acessar com o operador '.' -> pessoa.nome = 'Mariana' ou com o '[infoEStudante]'. Atraves do operador ponto podemos também alterar um atributo do objeto.
+
+- delete pessoa.nome -> deleta propriedade nome
+
+- Funções em objetos representam seus comportamentos
+
+### Iterando sobre objetos
+
+- For in - for(let chave in estudante){
+        console.log(chave)
+} - Percorremos cada chave do objeto, para vermos os valores basta usarmos estudante[chave]
+
+- For of - > Usamos mais para arrays, iterar sobre itens de array
+
+- Object.keys(estudante) -> Teremos aqui a lista de chaves
+
+- Object.values(estudante) -> retorna array dos valores
+
+- Object.entries(estudante) -> retorna arrays de chave e valor - Arrays de arrays com chave e valor 
+for of[ [ 'nome', 'Mariana' ], [ 'idade', 27 ] ]
+
+### JSON
+
+JavaScript Object Notation
+- Não é tipo de dado JS
+- Não precisa ser declarado
+
+{
+        "nome":"Mariana",
+        "idade":32
+}
+
+
+- Para salvar em variavel:
+const estudante = require('./estudante.json')
+consts chaves = Object.keys(estudante)
+
+- JSON.Strongify - Transforma json em string
+- JSON.parse - Transforma a string em objeto
+
+## Metodo Find X Filter
+
+- Metodo find encontra o primeiro objeto que tem determinada propriedade
+- Metodo filter retorna um array de todos elementos que atendem determinada condição
+
+## Metodo Sort
+
+- Tem dois parametros (a, b)
+
+function ordena(lista, propriedade)
+{
+        return lista.sort((a, b) =>
+        {
+                if(a[propriedade] < b[propriedade] return -1)
+                return 1;
+        })
+}

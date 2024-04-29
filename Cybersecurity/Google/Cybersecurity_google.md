@@ -252,3 +252,5 @@ Both of these SIEM tools, and SIEMs in general, collect data from multiple place
 - Python : Security professionals can use Python to perform tasks that are repetitive and time-consuming and that require a high level of detail and accuracy.
 
 - An intrusion detection system (IDS) is an application that monitors system activity and alerts on possible intrusions. The system scans and analyzes network packets, which carry small amounts of data through a network.
+
+## Security Domains

@@ -526,5 +526,125 @@ Placa de carro 3 letras e 4 digitos
         - Entre N objetos dados escolhem-se R que podem ser repetidos
         - Associamos o objeto distinto a 1 e o que pode ser repetido a 0
         - N objetos diferentes, combinação de objetos N tomados R a R é uma seleção de objetos distintos ou não escolhidos entre objetos dados
-        - CRn^r = C(N + R - 1, n - 1);
+        - CRn^r = C(N + R - 1, n -  1);
         
+## Coeficientes binomiais
+
+Chamamos de C(n, r) de coeficiente binomial. Ou seja, a combinação de N em r a r temos um coeficiente binomial.
+
+n! / r! (n-r)!
+
+- Numero de possibilidade de escolher de possibilidades de escolher r objetos difernetes entre n objetos diferentes = expresão algébrica
+
+- Argumento combinatório e algebrico: Dois tipos de argumentos que pode ser usados na dedução de teoremas e identidades envolvendo fatoriais ou coeficientes binomiais. 
+- O Raciocínio combinatório está baseado na decomposição de um conjunto em subconjuntos adequados e na contagem de elementos que aparecem as combinações simples
+- O raciocínio algébrico está baseado na manipulação de fatoriais
+
+- Um racicionio combinatório determina a forma de uma expressão algébrica e vice versa. Uma forma de expressão algébrica sugere um raciocínio combinatório. 
+
+Raciocinios combinatorios equivalentes geram identidades algébricas e vice-versa
+
+### Identidades
+
+- C(n, r) = C(n, n - r)
+
+n!/r!(n -r)! = n! / (n - r)! (n - (n - r))!
+
+- Relação de Stiff : 
+C(n, r) + C(n, r + 1) = C(n + 1, r + 1)
+
+Seja um grupo (conjunto) formado por n + 1 elementos, onde n são do mesmo tipo e 1 é de outro tipo (por exemplo, n homens, 1 mulher). 
+
+As diferentes maneiras de selecionar nesse grupo um subgrupo de r + 1 elementos (por exemplo, r + 1 pessoas entre os n homens e 1 mulher) podem
+ser decompostos em 2 classes disjuntas:
+- os que têm r do mesmo tipo e 1 do outro tipo
+(por exemplo, r homens e 1 mulher)
+
+- os que têm r + 1 do mesmo tipo
+
+(por exemplo, r + 1 homens)
+
+Prova:
+
+Selecionar grupo de r + 1 elementos em n + 1 é igual a :
+
+C(n + 1, r + 1) =
+
+Selecionar r (tipos diferentes) elementos em n
+
+C(n, r)
+
+Selectionar r + 1(mesmo tipos)
+
+C(n, r + 1)
+
+*Relação de Stifel*
+
+C(n + 1, r + 1) = C(n, r) + C(n, r + 1) n = 1, 2, ...
+
+r = 0, 1, ... , n−1
+
+é equivalente a:
+
+C(n, r) = C(n - 1, r -1) + C(n - 1, r)
+
+- Condição de fronteira
+C(n, 0) = C(n, n) = 1
+
+- Condição secundárias
+
+C(n, 1) = C(n, n − 1) = n
+
+## Triangulo de PASCAL
+
+Podemos usar relação de stiffel, condição de fronteira e condição secundária no triangulo de Pascal e analisar as combinações
+
+1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
+1 5 10 10 5 1
+...
+
+As fronteiras são sempre quando temos o numero fazendo combinação de 0 elementos ou de N elementos. Sempre dará um.
+
+As  secundárias são vistas quando N elementos são tomados por 1 ou por N - 1 elementos
+
+A relação de stifel é vista nas diagonais a partir da terceira linha, onde temos 3 + 3 = 6. Combinação deste elemento N tomado R a R é a soma da combinação de N - 1 elementos tomados R - 1 a R - 1 mais combinação de N - 1 elementos tomado a R. Então é o de cima somado com o da diagonal do lado esquerdo ao de cima. 
+
+
+- Teorema das linhas : Pelo teorema das linhas conseguimos calcular a soma dos elementos de uma linha n sem a necessidade de conhecer os elementos. 
+
+A soam dos elementos é 2 ^n.
+
+- Teorema das colunas:
+
+dividimos entre linhas N e colunas R; A soma das colunas r é a resposta para o elemento da proxima linha na diagonal seguinte. 
+
+C (r, r) + C(r, r + 1) ... C(n, r) = C(n +1, r + 1).
+
+- Teorema das diagonais:
+
+C (n + r + 1, r) = C(n, 0) + C(n + 1, 1)... C(n + r, r)
+
+
+RESUMO:
+
+Definição:
+Coeficiente binomial: C(n, r) = 
+        n !
+_________________
+    r! (n − r)!
+
+Argumentos:
+Na dedução de propriedades envolvendo coeficientes binomiais
+
+• combinatórios • algébricos
+
+Observação:
+Raciocínios combinatórios equivalentes geram identidades algébricas e vice-versa.
+
+## Binômios de Newton
+
+
