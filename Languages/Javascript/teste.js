@@ -1,7 +1,24 @@
 const estudantes = require("./teste.json");
 
-for(let [chave, valor] of Object.entries(estudantes))
+nums = [2,7,11,15], target = 9
+
+const twoSum = (nums, target) =>
 {
-    console.log(chave + " :" + JSON.stringify(valor));
+    const map = new Map();
+    const res = []
+    for(let [pos, numb] of Object.entries(nums))
+    {
+        var dif = target - numb;
+        if(map.has(dif))
+        {
+            res.push(map.get(dif), pos)
+        }
+        map.set(numb, pos);
+
+
+    }
+    return res;
 }
+
+console.log(twoSum(nums, target));
 

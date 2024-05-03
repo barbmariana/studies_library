@@ -622,7 +622,7 @@ A soam dos elementos é 2 ^n.
 
 dividimos entre linhas N e colunas R; A soma das colunas r é a resposta para o elemento da proxima linha na diagonal seguinte. 
 
-C (r, r) + C(r, r + 1) ... C(n, r) = C(n +1, r + 1).
+C (r, r) + C(r + 1, r) ... C(n, r) = C(n +1, r + 1).
 
 - Teorema das diagonais:
 
@@ -647,4 +647,36 @@ Raciocínios combinatórios equivalentes geram identidades algébricas e vice-ve
 
 ## Binômios de Newton
 
+Chamamos de binômio qualquer expressão da forma a+b onde a e b são simbolos diferentes.
 
+ex: 
+x - y = x + (-y)
+3xy + x^2
+
+(a + b)^0 = 1
+(a+ b)^1 = a + b
+(a + b)^2 = a ^2 + 2ab + b ^2 
+
+Note que cada coeficiente demonstra a linha na piramide de pascal. Logo, temos que a linha pode ser representada pelo binômio elevado a N(num da linha)
+
+Principio de indução matemática:
+
+seja P(n) : (a + b)^n = Soma de r=0 até n C(n, r) A^n - r B^r
+
+Base de indução:
+
+(a + b) ^1 = a + b
+
+a + b = C(1, 0)a^1 + C(1, 1)b^1
+
+Logo P(1) é verdadeira
+
+Hipótese : 
+P(k) é verdadeira
+
+Prova:
+Se P(k) é verdadeira -> P(k + 1) também
+
+![alt text](image-13.png)
+
+![alt text](image-14.png)
