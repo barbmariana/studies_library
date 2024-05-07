@@ -759,3 +759,81 @@ arquivo.close()
 
 - Tratamento de Exceções são importantes para evitarmos erros
 
+## Conjuntos
+- Chamamos de Sets
+- Estrutura de dados mutavel, desordenada e sem elementos repetidos
+
+- função set() associa conjunto vazio a variavel
+escolhidos = set()
+print(escolhidos)
+
+- funcao add() adiciona elemento ao conjunto, caso ainda não esteja no conjunto
+- funcao discard retira elemento do conjunto caso o elemento esteja no conjunto
+- len() - retorna tamanho
+- Podemos criar com {} = escolhidos = {"Maria", "joao"}
+
+Criando conjunto:
+
+escolhidos = set()
+for i in range(5):
+        nome = input(Digite o nome)
+        escolhidos.add(nome)
+        print(escolhidos)
+
+- s.union(t) => Retorna conjunto resultante da uniao de s e t ou S|T
+- s.intersection(t) ou s & t => elementos resultantes da interseção de elementos que estão em s e em t
+- s.difference(t) => diferença entre elementos. Todo elemento que pertence a s e não a t
+- IGUAL(==) DIFERENTE(!=)
+- >= Contem
+- <= esta contido
+- IN x in s é verdadeiro se x é elemento de s
+
+## Dicionário
+
+- Conhecido como Dict
+- Eficiente e mutável, acessado por uma chave não repetida que pode ser de qualquer tipo como String ou tupla
+- O uso básico é chave:valor, sempre em bares. Iteraveis sobre as chaves
+- Pode ser escrito direto no print
+
+- pares = dict() ou pares ={}
+pares[13] = "Valor da Sorte"
+pares{
+        "Maria":"2222-2222"
+}
+
+- del pares[chave] -> retira chave:valor do dicionário. Caso a chave não esteja no dicionario teremos keyError
+
+-len() -> retorna o tamanho do dicionário
+
+``
+pares = dict()
+for i in range(5):
+        nome = input()
+        fone = input()
+        pares[nome] = fone
+        print pares
+``
+
+d.items() -> retorna uma visualização de todos os pares
+d.keys() -> retorna todas chaves
+d.values -> retorna todos valores
+
+for chave in pares:
+        print(chave, ":", pares[chave])
+
+for chave, valor in pares.items():
+
+for chave in sorted(pares)
+
+for valor in pares.values():
+
+- função get() -> pares.get() -> se devolver none é pq não existe no dict
+- Ao usarmos o new_dict[name] estamos acessando a lista ali atribuida:
+
+``
+            for line in file_p:
+                name, *numbers = line.split("#")
+                new_dict[name] = []
+                for num in numbers:
+                    new_dict[name].append(int(num))
+``
