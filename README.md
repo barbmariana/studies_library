@@ -1,2 +1,3 @@
 # Studies Library
-This is my studies library where I can search for my annotations and materials
+Hi, Welcome to my library. 
+Feel free to look into my annotations.
