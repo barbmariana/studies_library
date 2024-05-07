@@ -469,7 +469,7 @@ def buscaModa(valores):
 - organização de conjunto de elemento do mesmo tipo
 - sem perda de generalidade o problema será atacado considerando-se que : os elementos a serem ordenados são numéricos e estão armazenados em vetor
 
-- Selection Sorte : para cada posição i do vetor valores o algoritmo procura pelo menor elemento e coloca na posição i
+- Selection Sort : para cada posição i do vetor valores o algoritmo procura pelo menor elemento e coloca na posição i
 
 ``
 def buscaMenor(arr, pos):
