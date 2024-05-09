@@ -343,3 +343,130 @@ Criar entidade, Unir atributos em entidades, hierarquizar entidades, criar relac
 sobre a qual o sistema deve se lembrar alguma coisa
 - Elas podem ser objetos tangíveis, papéis exercidos, eventos, interações e especificações
 - Entidades não possuem valores, são conseitos completos. Os atributos não são conceitos completos e possuem valor
+
+## Modelo Relacional
+
+- Um banco de dados relacional é composto de tabelas. Cada tabela é uma relação, igual na teoria dos conjuntos
+
+- Tabela é conjunto não ordenada de linhas. As linhas também são chamadas de tuplas. Cada linha é composta por uma série de campo
+- A primeira linha é o nome dos atributos
+- Valores dos Campos devem ser Atômicos - Não podem ser divididos, por exemplo endereço. Se precisar ser vai em outros campos
+- Monovalorados - Só possuem um valor
+
+Linguagens de Consulta:
+- Como o SQL
+
+SELECT * FROM FILME WHERE ANO=2023
+
+
+- DOMÍNIO: É conjunto de valores atômicos, significa indivisível. São normalmente especificados definindo o tipo de dados que define os possíveis valores dos dados. Exemplo, nome de pessoas, datas, numeros de telefones mundiais...
+        - Nome
+        - tipos de dados
+        - Formato
+        - Outras informações que auxiliam a interpretação
+
+        Exemplo 
+        - Nome : Sexo
+        - tipo: { F e M}
+        - Formato : Letra isolada
+
+- FORMATO: Normalmente especificamos um formato para Domínio. 
+
+- ESQUEMAs de RELAÇÃO: Definido como R(A1, A2... An)
+        - Um nome de relação R
+        - Uma lista definida de atributos
+        - O grau da relação é a quantidade de atributos que a relação descreve
+
+        Exemplo:
+        - Filme(CodigoFilme, NomeOriginal, Ano, Tipo)
+        - Cliente(Nome, CPF, Telefone, Endereço, Sexo)
+
+- Estado Corrente : Esquema da relação define os valores possíveis para os atributos das tuplas. Relação é conjunto de tuplas válido para algum momento
+
+PESSOA = (NomePessoa, DataNascimentoPessoa)
+Dominio(NomePessoa) = Nomes
+Dominio(DataNascimentoPessoa) = Datas
+r(PESSOA) = {<Abel, 2/7/1996>, <Maria, 10/11/1999>}
+
+- Para interpretar Relação
+        - Cada linha de relação é interpretada como uma afirmação
+        - É um retrato da realidade em algum momento
+
+### Identificação de Linhas
+- A identidade de cada linha de uma tabela é definida pelos valores dos campos
+- Não existem no modelo relacional duas linhas onde todos os campos tenham o mesmo valor. Se não elas teriam a mesma identidade e quebraria regra de implementações de SGDB
+
+- chave : Uma chave é conjunto de campos cujos valores identificam unicamente uma linha em uma tabela
+        - chave candidata : coluna ou conjunto de colunas que pode ser usado para diferenciar uma linha de todas as outras de uma tabela. Ela pode ser o somatório de todas as linhas
+        - Chave primária : coluna ou combinação de colunas escolhido como referencia em uma tabela para diferenciar uma linha das demais. é escolhida entre as chaves candidadtas. Escolha obrigatória e essencial. Serão usadas como chaves estrangeiras em outra tabela
+        - chaves alternativas são as candidatas que não foram escolhidas como primarias
+        - chave estrangeira : coluna ou conjunto de uma tabela que são chave primaria em alguma tabela. Elas são as primárias em outra tabela
+
+- Restrições de integridade: chaves definem a restrição de integriadde. Unicidade da chave primária por exemplo. Temos integridade de domínio, vazio, tipo, chave e referencial
+        - pela chave : na inclusao e alteracao de uma linha na tabela que contem a chave estrangeira. Deve ser garantido que o valor da chave estrangeira seja o mesmo de chave primeira em outra tabela
+
+## Esquema de BD Relacional
+
+- Onde junto todos os esquemas de determinado campo
+- Instancia : Cada tabela . Uma chave estrangeira pode referencias a própria tabela
+
+- Algebra Relacional :
+        - Modelo relacional : modelo de tabelas
+        - Dominio : conjunto de valores
+        - tupla - linha
+        - atributo - coluna
+        - chave - identificador
+
+Algebra relacional é um conjunto de operadores que permitem a partir de tabelas obter tabelas de desejada
+
+        - Union ou U-> Uniao entre tabelas. Não aparecem valores repetidos
+        - Intersect ou U(invertido) -> Interseção, aparece apenas os que estão nos dois
+        - Minus ou diferença (-) -> Coloca apenas os que estão na A e não na B
+        - A TIMES B -> Junta tabelas
+
+- Seleção : Seleciono em uma tabela
+- Join : Junção de bancos
+
+
+## Modelagem OO em UML
+
+- OO surgiu como tentativa de solucionar problemas de desenvolvimento de software. Simplificar abstração e alterações no sistema
+
+- Organizar mundo real como coleção de objetos
+
+- Objetos do mundo real, onde iremos mapear o objeto em abstrações no mundo computacional. Objetos que tenham significado no mundo real 
+- Abstração : Operação mental para observar um domínio e capturar estrutura
+- Representação : convenções de representação
+
+- Todo modelo é uma abstração de algo que existe ou se imagina no mundo real . UMA REPRESENTAÇÃO
+
+- UML : Reuniu populares técnicas, linguagem para especificação de grandes sistemas, representação uniforme e gradual do conhecimento sobre o sistema
+
+- Um objeto encapsula numa mesma entidade estado e comportamento. Ou seja, atributos e metodos. É um conceito e abstração. Eles possuem identidade, estado e comportamento
+        - Podem ser coisas tangíveis, Incidentes e enveots ou até uma Interação
+        - Estado de objeto é condição em que o objeto pode existir : é representado pelos valores das suas propriedades em determinado instante
+- a classe por si só não tem valores e sim só suas instancias
+- herança : Uma classe genérica e suas herdeiras
+- Interface : Como objetos se comportam e seus atributos são estão classes na classes interpretadas
+
+Representação de uma classe
+
+NomedaClasse
+_____________
+atributos
+________________
+cidade
+
+## Relacionamentos:
+
+- Usamos relacionamentos como os objetos e classes estão conectados no modelo
+        - Associação simples : Conexão bidirecional entre duas classes. Pais associado a cidade que é sua capital. Cada um com um papel específico, esse papel deve estar explicito no modelo. 
+
+        Pais ---capital-------- Cidade
+        0..1(capital é capital ou nao)                    1(pais sempre tem uma capital) sempre é o conjunto de numeros, numero fixo ou de 0 ... n
+        - Agregação e composição : Exemplo de composição 
+        losango na ponta. Cidade possui bairro. Cidade possui um ou n bairros. Bairro está em uma e apenas uma cidade
+        - herança : Classe mais geral e classes especializadas. A classe herda propriedades e comportamento da mãe. Pode possuir atributos e comportamentos diferentes. Normalmente tem um triangulo ligando a mae e os filhos
+
+## Regras de Negócio
+
