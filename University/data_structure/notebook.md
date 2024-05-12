@@ -1086,3 +1086,6 @@ função juntaListas(V1, V2)
 
 
 ``
+
+### Árvores Binárias de Busca
+

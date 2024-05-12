@@ -680,3 +680,19 @@ Se P(k) é verdadeira -> P(k + 1) também
 ![alt text](image-13.png)
 
 ![alt text](image-14.png)
+
+TEOREMA BINOMIAL:
+
+(a+b)^n = Ec=0 ^n C(n, r)a ^n-r b^r
+
+A Expansão binomial: - Sempre tem n + 1 termos
+
+(x+3)^4 = x e 3 - > C(4, 0) x^4 + C(4,1) x^3 3^1 + C(4, 2) x^2 3^2 + C(4, 3) x 3^3 + C(4, 4) 3^4
+
+ 1 *1x^4 + 4*3*x^3 +6 *9x^2 + 4*27x + 81
+
+![alt text](image-15.png)
+
+![alt text](image-16.png)
+
+## Relações de Recorrencia
