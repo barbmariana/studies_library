@@ -696,3 +696,79 @@ A Expansão binomial: - Sempre tem n + 1 termos
 ![alt text](image-16.png)
 
 ## Relações de Recorrencia
+
+Apresentar técnica recursiva que permite reduzir problema envolvendo n objetos a outro problema com n -1 objetos.... n -2 ...
+
+- Uma relação de recorrencia é uma formula que relaciona um numero a a alguns de seus predecedores
+
+- Finonacci : Fn-1 + Fn -2
+
+
+- Propriedade Tn = 2^n  - 1 -> torre de hanoi, Método de Substituição só funciona para algumas relações de recorrencia
+
+## Grafos
+
+- Problemas reais podem ser modelados por grafos
+- São estruturas matemáticas discretas e tem interesse prático e teórico
+
+- Ideia inicial : Problema da ponte de kalinberg, atravessar pontes de diferentes pontos. Devemos determinar o trajeto que ocorre a partir de um ponto, percorrer tudo e voltar ao ponto de origem sem repetir vertices
+
+### Definições Básicas
+
+- Um grafo simples, ou grafo G é um par (V, E) denotado por G = (V, E). Onde V é conjunto finito não vazio de elementos denominados vértices e E é um conjunto de pares não ordenados de elementos distintos chamados arestas
+        - grafos = grafos simples
+        - vertices = nós = pontos
+        - numero de vertices de G = |V(G)| = n
+        - numero de arestas de G : |E(G)| = m
+        - conjunto de vértices e arestas : V(G1), E(G1)
+
+- Dado um grafo G = (V, E). Cada aresta e pertencente a E será detonado pelo par e = (v, w)
+
+- V = {a, b, c, d, e}
+- E - {(a,b)(b,c)(a,c)(a,e)(e, d), (c, d)}
+
+- A representação não é unica, depende de como posicionamos os vertices
+
+- Se relaxamos a definição de grafos, de maneira que admitamos a existencia de pares não ordenados iguais de elementos distintos V, chamdas arestas paralelas e de pares não ordenados de elementos iguais, chamados laços, temos então um multigrafo:
+        - V = {a, b, c, d}
+        - E = {(a, b), (a, b), (b,c),(c,d), (d, a), (c, c)}
+
+![alt text](image-17.png)
+
+- vértices v e w são adjacentes/vizinho se (v, w) pertence a E. Se existe uma aresta entre eles
+        - N(a) = {b, c, e} - vizinhos
+- Vertice v é isolado se N(v) =vazio, ou seja é isolado
+- Um vértice de G é dito universal quando N(b) = V - {v} -  é vizinho de todos menos dele
+
+- Em um mesmo grafo não podemos ter ao mesmo tempo um vértice isolado e um universal
+
+- Complemento  de um grafo G, denotado por G(com linha) é o grafo que tem o mesmo conjunto de vértices de G e tal que dois vértices distintos são adjacentes em G se e somente se não são adjacentes em G. Ou seja, é tudo invertido. Se são adjacentes em G, não serão em complomento de G, mas com mesmo conjunto de vértices
+
+![alt text](image-18.png)
+
+- Sejam os grafos G e H, H é dito subgrafo de G se V(H) contido em V(G) e E(G) contido em E(G)
+
+![alt text](image-19.png)
+
+- subgrafo induzido pegamos os vértices do de indução, verificamos se está contido no V(G), e depois montamos a Arestas com as arestas disponiveis no E(G) que tenham os vertices disponiveis no de indução. Ele preserva a estrutura original.
+
+- subgrafo gerador : H é dito subgrafo gerador de G se H é subgrafo de G. V(H) = V(G)
+
+![alt text](image-20.png)
+
+- Grafo completo : Todos os seus pares de vertices distintos são adjacentes. Todos os vértices são universais. Com n vertices representamos ele com Kn
+
+- Seja G um grafo e A um subconjunto de vertices de G, A é uma clique de G se G[A] é grafo completo. Ou seja, o grafo induzido por eles é um grafo completo
+
+- Grafo Nulo: é nulo, ou completamente independente se todos os seus pares de vértices distintos não são adjacentes. Todos seus vértices são isolados. Um grafo nulo com n vértices é denotado por Nn.
+
+- Conjunto independente : Seja um grafo e S um subconjunto de vértices de G, S é conjunto independente de G se G[S] é grafo nulo
+
+## Grau de um vértice
+
+
+
+
+
+
+
