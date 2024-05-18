@@ -695,4 +695,196 @@ A Expansão binomial: - Sempre tem n + 1 termos
 
 ![alt text](image-16.png)
 
+<<<<<<< Updated upstream
 ## Relações de Recorrencia
+=======
+## Relações de Recorrencia
+
+Apresentar técnica recursiva que permite reduzir problema envolvendo n objetos a outro problema com n -1 objetos.... n -2 ...
+
+- Uma relação de recorrencia é uma formula que relaciona um numero a a alguns de seus predecedores
+
+- Finonacci : Fn-1 + Fn -2
+
+
+- Propriedade Tn = 2^n  - 1 -> torre de hanoi, Método de Substituição só funciona para algumas relações de recorrencia
+
+## Grafos
+
+- Problemas reais podem ser modelados por grafos
+- São estruturas matemáticas discretas e tem interesse prático e teórico
+
+- Ideia inicial : Problema da ponte de kalinberg, atravessar pontes de diferentes pontos. Devemos determinar o trajeto que ocorre a partir de um ponto, percorrer tudo e voltar ao ponto de origem sem repetir vertices
+
+### Definições Básicas
+
+- Um grafo simples, ou grafo G é um par (V, E) denotado por G = (V, E). Onde V é conjunto finito não vazio de elementos denominados vértices e E é um conjunto de pares não ordenados de elementos distintos chamados arestas
+        - grafos = grafos simples
+        - vertices = nós = pontos
+        - numero de vertices de G = |V(G)| = n
+        - numero de arestas de G : |E(G)| = m
+        - conjunto de vértices e arestas : V(G1), E(G1)
+
+- Dado um grafo G = (V, E). Cada aresta e pertencente a E será detonado pelo par e = (v, w)
+
+- V = {a, b, c, d, e}
+- E - {(a,b)(b,c)(a,c)(a,e)(e, d), (c, d)}
+
+- A representação não é unica, depende de como posicionamos os vertices
+
+- Se relaxamos a definição de grafos, de maneira que admitamos a existencia de pares não ordenados iguais de elementos distintos V, chamdas arestas paralelas e de pares não ordenados de elementos iguais, chamados laços, temos então um multigrafo:
+        - V = {a, b, c, d}
+        - E = {(a, b), (a, b), (b,c),(c,d), (d, a), (c, c)}
+
+![alt text](image-17.png)
+
+- vértices v e w são adjacentes/vizinho se (v, w) pertence a E. Se existe uma aresta entre eles
+        - N(a) = {b, c, e} - vizinhos
+
+![alt text](image-33.png)
+
+- Vertice v é isolado se N(v) =vazio, ou seja é isolado
+- Um vértice de G é dito universal quando N(b) = V - {v} -  é vizinho de todos menos dele
+
+- Em um mesmo grafo não podemos ter ao mesmo tempo um vértice isolado e um universal
+
+![alt text](image-34.png)
+
+- Complemento  de um grafo G, denotado por G(com linha) é o grafo que tem o mesmo conjunto de vértices de G e tal que dois vértices distintos são adjacentes em G se e somente se não são adjacentes em G. Ou seja, é tudo invertido. Se são adjacentes em G, não serão em complomento de G, mas com mesmo conjunto de vértices
+
+![alt text](image-18.png)
+
+- Sejam os grafos G e H, H é dito subgrafo de G se V(H) contido em V(G) e E(G) contido em E(G)
+
+![alt text](image-19.png)
+![alt text](image-35.png)
+
+- subgrafo induzido pegamos os vértices do de indução, verificamos se está contido no V(G), e depois montamos a Arestas com as arestas disponiveis no E(G) que tenham os vertices disponiveis no de indução. Ele preserva a estrutura original.
+
+- subgrafo gerador : H é dito subgrafo gerador de G se H é subgrafo de G. V(H) = V(G)
+
+![alt text](image-20.png)
+![alt text](image-36.png)
+
+- Grafo completo : Todos os seus pares de vertices distintos são adjacentes. Todos os vértices são universais. Com n vertices representamos ele com Kn
+
+- Seja G um grafo e A um subconjunto de vertices de G, A é uma clique de G se G[A] é grafo completo. Ou seja, o grafo induzido por eles é um grafo completo
+
+- Grafo Nulo: é nulo, ou completamente independente se todos os seus pares de vértices distintos não são adjacentes. Todos seus vértices são isolados. Um grafo nulo com n vértices é denotado por Nn.
+
+- Conjunto independente : Seja um grafo e S um subconjunto de vértices de G, S é conjunto independente de G se G[S] é grafo nulo
+
+## Grau de um vértice
+
+Seja G = (V, E), v  pertence a V, o grau de v é o numero de arestas incidentes a v. O grau de v é o número de vertices adjacentes a v.
+        - denotamos ele como d(v) ou dg(v) - degree em ingles
+        - em multifrafos convencionamos que cada laço contribui com duas unidades para grau de vertice
+        - O menor grau de G é delta pequeno de G. o maior grau é delta grande de G
+
+![alt text](image-37.png)
+![alt text](image-38.png)
+
+- Grafo regular se todos os seus vertices tem o mesmo grau. K - regular, regular de grau K
+        - ex: G1 é 0-regular
+        - Kn é regular de grau (n-1)
+        (n - 1) - regular
+
+- Soma do grau de um grafo. soma de todos os graus d(vertice). 
+- A soma dos graus dos vértices é duas vezes o número de arestas do grafo 
+Soma - d(v) = 2 E(G)
+
+- Teorema do aperto de mãos
+- Consequencias : 
+        - Qualquer grafo a soma de todos os graus do vertice é numero par
+        - em qualquer grafo o numero de vertices de grau impar é par
+        - Se G é um grafo com n vertices e k-regular, então G tem exatamente 1/2 nk arestas
+        - Sequencia de graus : listamos em ordem crescente permitindo repetições quando necessário
+
+## Grafos isomorfos
+
+- Duas representações geométricas de um grafo
+- Posso ter duas representações geométricas que parecem iguais mas representam grafos diferentes
+
+![alt text](image-39.png)
+![alt text](image-40.png)
+
+- Dadas duas representações geométricas elas correspondem a um mesmo grafo?
+- é possivel fazer coincidir respectivamente os pontos das duas represetnações geométricas de modo a preservar adjacencias?
+
+- Devemos calcular V(G), E(G) e o grau, e assim podemos verificar se são isomorfos. Podemos fazer uma igualdade dos vértices e verificar se todas as arestas estão corretas
+        - Deve se examinar cada uma das possíveis n! permutação dos vertices, é dificil
+
+## Representação de grafos por matrizes
+
+- Dado grafo G = (V, E). V = {v1, v2, ..., vn}, |V| = n. a matriz de adjacencia A = (Aij) é uma matriz n x n tal que 1 se (vi, vj) pertence a E e 0 caso contrário - MATRIZ de ADJACENCIA
+
+- dado grafo G = (V, E), v = {v1, v2, ... vn}, |V| = n e E={e1, e2, ... em}, |E| = m, a matriz de incidencia B(bij) é uma matriz n x m. 1 se o vertice V é incidente a aresta é, 0 caso contrario
+
+## Caminhos e ciclos
+
+- Como ir de um vertice ao outro?
+- Passeio : sequencia de vertices tal que pertençam a E(G) essas sequencias, ou seja, existe uma aresta entre eles. K é comprimento deste passeio P, v0 é inicio e vk é o termino. Podemos ter passeios repetidos
+
+![alt text](image-41.png)
+
+        - Se todas as arestas são distintas então chamamos de trajeto(trilha)
+        - Se todos os vértices são distintos temos então um caminho
+- Passeio fechado é aquele em que V0 = Vk, e se todas as arestas desse passeio forem distintas ele é trajeto fechado. Se todos os vertices forem distintos com exceção do extremo, temos um ciclo. Comprimento de ciclo é dado pelo numero de arestas, ou de vertices distintos, podendo ser ciclo par ou impar
+
+![alt text](image-42.png)
+![alt text](image-43.png)
+
+- Conexidade:
+Dois vértices são conexos em G quando existe caminho entre v e w em G
+- Um grafo G é conexo quando todo par de vertices distintos de G é conexo, isto é, para todo par de vertices distintos de G existe caminho entre eles
+- Os subgrafos, ou componentes, também podem ser conexos, ou seja, exige caminho entre vertices. Componentes conexos de G é denotado por w(G)
+
+![alt text](image-44.png)
+- Distancia : a distancia entre dois vértices v e w de grafo G é denotada por d(v, w). é o comprimento do menor caminho entre eles. Se não existir caminho entre eles eles estão em componentes conexos distintos ou seja distancia infinita
+        - excentricidade de vértice v de G, denotada por e(v), é valor da maior distância de v aos outros vertices de G, vemos todos d(v,w) e o maior defini e(v)
+![alt text](image-45.png)
+
+
+- diametro de grafo G é valor de sua maior excentricidade
+- Centro de grafo de G, denotado por c(G), é o conjunto dos vértices de G que tem a menor excentricidade. c = {e}
+
+![alt text](image-46.png)
+![alt text](image-47.png)
+
+RESUMOS Grafos especiais
+![alt text](image-23.png)
+![alt text](image-24.png)
+![alt text](image-25.png)
+![alt text](image-26.png)
+![alt text](image-27.png)
+![alt text](image-28.png)
+![alt text](image-29.png)
+![alt text](image-30.png)
+![alt text](image-31.png)![alt text](image-32.png)
+
+- Problema do explorador : explorar todas as estradas apenas uma vez. é trajeto fechado que inclui cada aresta do grafo.
+- Problema do viajante : visitar uma vez cada cidade sem passar pela mesma cidade. É um problema de achar um ciclo que inclui cada vértice do grafo
+
+- Grafo conexo G é euleriano se existe trajeto fechado que inclui cada aresta de G. tal trajeto é chamado de euleriano ou circuito euleriano ( explorador, visita todas as arestas e completa circulo, pode repetir vertice mas n pode repetir aresta) - se todos os vertices tiverem grau par, entao ele é um grafo euleriano, basta ver as arestas que sai do vertice
+- Um grafo G é hamiltoniano se existe ciclo que inclui cada aresta de G (viajante, deve visitar apenas uma vez cada vertice e completa circulo)
+
+
+![alt text](image-48.png)
+
+
+Teoremas:
+
+Em todo grafo (simples ou multigrafo), temos que vale o Teo-
+rema do Aperto de M ̃aos, o qual nos diz que a soma dos graus dos
+
+v ́ertices  ́e igual ao dobro do n ́umero de arestas. Uma vez que sabe-
+mos que nosso grafo  ́e 5-regular, podemos determinar seu n ́umero
+
+de arestas. Lembre-se que um grafo G  ́e dito d-regular quando
+todo v ́ertice de G tem grau d.
+
+## Grafos Planares
+
+![alt text](image-49.png)
+
+>>>>>>> Stashed changes

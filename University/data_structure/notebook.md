@@ -1089,3 +1089,65 @@ função juntaListas(V1, V2)
 
 ### Árvores Binárias de Busca
 
+- Ideia: Estruturar conjunto de chaves de modo a facilitar a busca de x
+
+si = chave
+S = { s 1, ..., s n }, s 1 < ... < s n
+x = valor dado
+x pertence a S ?
+Em caso positivo, encontrar s j tal que x = sj
+
+- Podemos chamar essa árvore binária de T. T possui n nós, cada nó v corresponde a uma chave distinta sj pertencente a S e possui como rótulo o valor r(v) = sj. T é denominada árvore binária de busca
+
+        v
+v1              v2
+
+r(v1) < r(v)
+r(v2) > r(v)
+
+
+-Usamos a arvore para resolver problema de bsuca, encontrar chave sj tal que x = sj. Percorremos o caminho em t desde a raiz até sj. Se x = r(v) a busca termina em sucesso
+
+- Algoritmo de busca : 
+ptraiz = ponteiro para raiz da árvore
+variavel f = natureza final da busca
+
+f = 0 --> arvore vazia
+f = 1 --> x pertence a S, e pt aponta pro nó procurado
+f > 1 --> x não pertence a S
+
+
+
+procedimento busca-arvore(x, pt, f)
+        se pt = lambda então f := 0
+        senão se x = pt↑.chave então 
+                f := 1
+                senão se x < pt↑.chave então
+                        se pt↑.esq = lambda então f := 2
+                        senão 
+                                pt := pt↑.esq
+                                busca-árvore(x, pt, f)
+                senão
+                        se ptt↑.dir =  lambda então
+                         f := 3
+                         senão
+                         pf := pt↑.dir
+                         busca-arvore(x, pt, f)
+        pt := ptraiz ; busca-arvore(x, pt, f)
+
+Complexidade do Algoritmo:
+- em cada passo num constante de operações
+- complexidade = O(n) = altura da árvore
+
+- Melhor complexidade - altura minima arvore
+- Melhor arvore - arvore completa
+
+- Arvore binária de busca ótima: é uma arvore completa. Complexidade é altura. N fica entre 2^h-1 < n < 2^h  -1> . Complexidade O(log n). Numero de nós em cada nivel é o dobro do nivel anterior
+
+Melhor arvore de busca -> arvore completa
+Pior arvore -> Altura mt grande -> ziguezague
+
+Melhor árvore : 1
+Pior = 2^n
+
+- 

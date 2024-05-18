@@ -837,3 +837,251 @@ for valor in pares.values():
                 for num in numbers:
                     new_dict[name].append(int(num))
 ``
+
+## Persistência de Dados : Arquivos Binários
+
+- Existem dois tipos de arquivo : Texto e binário
+- Binário é sequencia de bytes que reside em uma área de armazenamento sob um mesmo nome
+- Arquivos binários podem ser criados, editados e seu conteúdo recuperado por programas que conhecem a estrutura dos dados nele armazenados
+
+- Operações básicas:
+
+Abertura: open() -> abre e associa um arquivo a uma variável permitindo a manipulação do conteúdo
+Fechamento : arq.close()
+
+arq.read() -> copia parte ou todo conteudo de um arquivo para a memória principal
+
+arq.write() - Copia dados presentes na memória principal para dentro de arquivos
+
+- Reposiciona e consulta a localização do cursos de escrita e leitura. Operações realizadas, respectivamente, através dos métodos arq.seek() e arq.tell()
+
+### Abertura de Fechamento arquivo binário
+
+arq = open(nome, modo)
+nome -> path que indica onde o arquivo está
+modo -> define como o arquivo deverá ser aberto, podendo assumir valores "rb", "wb", "r + b", "w + b" e "a + b"
+
+rb : abre arquivo binário especificado para leitura, ele deve existir antes
+wb : abre arquivo binário especificado para escrita, caso ele nao exista ele será criado. Caso exista seus dados serao sobreescritos
+"r + b" : Abre um arquivo binário especificado para leitura e escrita. O arquivo deve existir previamente, podendo seu conteúdo ser alterado.
+
+“w+b”: Abre um arquivo binário especificado para escrita e leitura. Caso o arquivo não exista, este será criado. Caso exista, seus dados serão
+sobrescritos por completo.
+
+"a+b”: Abre um arquivo binário no modo append (concatenação). Caso o
+arquivo não exista, este será criado. Caso existam seus dados serão
+mantidos e o novo conteúdo será anexado ao fim do arquivo
+
+try:
+        arq = open("arq.bin", "rb")
+        print(Arq aberto)
+        arq.close()
+except IOError:
+        print(Erro ao abrir)
+
+ou
+
+try:
+with open("arquivo.bin", "rb") as arq:
+        Faça algo
+except IOError:
+        print(Erro)
+
+### Leitura de Arquivo Binário
+
+- Leitura sequencial, copia bloco de bytes contido no arquivo.
+
+bloco = arq.read(tamanho)
+
+- tamanho é opcional, se não colocamos ele le até o final do arquivo. 
+
+- Método unpack(formato, bloco) - do módulo struct para desempacotar o bloco de bytes na forma de tipos primitivos
+- No caso de String, use o método decode(codigicação) para converter o bloco em caracteres
+
+try:
+with open(“arquivo.bin”, “rb”) as arq:
+byte = arq.read(1)
+while byte != b“”:
+# Faça alguma coisa com o byte lido
+byte = arq.read(1)
+except IOError:
+print(“Erro ao abrir ou ao manipular o arquivo.”)
+
+
+import struct
+# Leitura de um valor inteiro e um ponto flutuante com precisão dupla
+try:
+with open(“arquivo.bin”, “rb”) as arq:
+inteiro = struct.unpack(“i”, arq.read(4))[0] # Note o acesso “[0]”
+real = struct.unpack(“d”, arq.read(8))[0]
+print(“Valor inteiro:”, inteiro, “Valor real:”, real)
+except IOError:
+print(“Erro ao abrir ou ao manipular o arquivo.”)
+
+# Leitura de um string binarizado que ocupa 16 bytes no arquivo
+try:
+with open(“arquivo.bin”, “rb”) as arq:
+bloco = arq.read(16)
+texto = bloco.decode(“utf-8”) # Conversão do bloco em String
+except IOError:
+print(“Erro ao abrir ou ao manipular o arquivo.”)
+
+- O parâmetro esperado pelo método decode(codificação) deve indicar
+qual o mapa de caracteres utilizado na conversão do bloco de bytes em
+String. Caso não seja informado, a codificação utilizada será “utf-8”.
+Dentre as dezenas de codificações disponíveis, junto à “utf-8”, a
+codificação “ascii” é uma das mais comuns.
+
+
+## Escrita em binário
+
+- escrita sequencial - copia um bloco de bytes contido na memória principal, acessada por uma variável, para dentro de bloco de mesmo tamanho no arquivo
+
+arq.write(bloco)
+
+- método pack(formato, v1, v2, ...) -> do módulo struct para empacotar dentro de um bloco, conforme o formato especificado
+- No caso de string, utilizar método encode(codificacao) para converter os caracteres
+
+# Cópia do conteúdo de um arquivo binário para outro
+with open(“origem.bin”, “rb”) as entrada:
+with open(“destino.bin”, “wb”) as saida:
+byte = entrada.read(1)
+while byte != b“”:
+saida.write(byte)
+byte = entrada.read(1)
+
+import struct
+# Escrita de um valor inteiro e um ponto flutuante com precisão dupla
+try:
+with open(“arquivo.bin”, “wb”) as arq:
+bloco = struct.pack(“i”, 10)
+arq.write(bloco)
+bloco = struct.pack(“d”, 99.5)
+arq.write(bloco)
+except IOError:
+print(“Erro ao abrir ou ao manipular o arquivo.”)
+
+# Escrita de um string binarizado no arquivo
+try:
+with open(“arquivo.bin”, “wb”) as arq:
+texto = “Sou aluno do CEDERJ”
+bloco = texto.encode(“utf-8”) # Conversão do String em bloco de bytes
+arq.write(bloco)
+except IOError:
+print(“Erro ao abrir ou ao manipular o arquivo.”)
+
+## Deslocamento de cursos de Leitura/Escrita
+
+Ao abrir um arquivo em modo “rb”, “wb”, “r+b” ou “w+b”, o cursor de
+leitura/escrita é posicionado no primeiro byte do arquivo (endereço 0), enquanto
+que ao utilizar o modo “a+b”, o cursor é posicionado no byte seguinte ao último
+byte do arquivo existente. O cursor avança automaticamente n bytes a cada leitura ou escrita, onde n é a
+quantidade de bytes lidos ou escritos.
+
+- O endereço atual do cursor é retornado pelo método arq.tell()
+- Para posicionar o cursor no endereço desejado : arq.seek(endereço relativo, origem)
+        A origem é um parâmetro opcional que aceita os valores:
+        0: início do arquivo (padrão, caso origem não seja informada)
+        1: posição atual do cursor
+        2: fim do arquivo
+
+import struct
+# Verificando o avanço do cursor de leitura/escrita
+try:
+with open(“arquivo.bin”, “rb”) as arq:
+pos = arq.tell()
+print(“O cursor está no endereço”, pos)
+x = struct.unpack(“i”, arq.read(4))[0]
+pos = arq.tell()
+print(“Após ler 4 bytes, ele foi para o endereço”, pos)
+except IOError:
+print(“Erro ao abrir ou ao manipular o arquivo.”)
+
+# Verificando o tamanho do arquivo
+try:
+with open(“arquivo.bin”, “rb”) as arq:
+arq.seek(0, 2)
+tam = arq.tell()
+print(“O arquivo possui”, tam, “bytes”)
+except IOError:
+print(“Erro ao abrir ou ao manipular o arquivo.”)
+
+import struct
+# Acesso randômico para leitura do conteúdo do arquivo
+try:
+with open(“arquivo.bin”, “rb”) as arq:
+print(“Os 10 primeiros valores inteiros armazenados são”)
+for x in range(0, 10):
+print(struct.unpack(“i”, arq.read(4))[0])
+print(“Da posição atual, voltarei o cursor para reler os 5 últimos valores”)
+arq.seek(-(4 * 5), 1)
+for x in range(0, 5):
+print(struct.unpack(“i”, arq.read(4))[0])
+print(“Agora voltei para o início do arquivo para reler o primeiro valor”)
+arq.seek(0)
+print(struct.unpack(“i”, arq.read(4))[0])
+except IOError:
+print(“Erro ao abrir ou ao manipular o arquivo.”)
+
+import struct
+# Subprograma para leitura dos “n” primeiros valores inteiros
+def mostrarOsNPrimeirosValores(arq, n):
+print(“Os primeiros valores contidos no arquivo são”)
+arq.seek(0)
+for k in range(0, n):
+print(struct.unpack(“i”, arq.read(4))[0])
+# Programa Principal para leitura e escrita com acesso randômico
+try:
+with open(“arquivo.bin”, “w+b”) as arq:
+print(“Escrever os valores inteiro de 1 a 5 no arquivo”)
+for x in range(1, 6):
+arq.write(struct.pack(“i”, x))
+mostrarOsNPrimeirosValores(arq, 5)
+print(“Substituir o segundo valor inteiro contido no arquivo por 99”)
+arq.seek(4)
+arq.write(struct.pack(“i”, 99))
+mostrarOsNPrimeirosValores(arq, 5)
+except IOError:
+print(“Erro ao abrir ou ao manipular o arquivo.”)
+
+## Registro
+
+- organizar coleções de dados dentro de arquivos
+- Armazenar os dados de um grupo de alunos reservando para cada aluno m bytes. Isso é registro de m bytes. Assim podemos calcular o inicio de cada registro utilizando endereco = chave do registro x tamanho do registro
+
+seek(endereco) -> para navegar entre registros
+
+ou
+
+Nome da estrutura = struct.Struct(formato)
+
+formato sendo string que determina a sequencia em que ops dados serão empacotados pelo método pack() ou desempacotados em uma tupla pelo método unpack(bloco)
+
+
+import struct
+Aluno = struct.Struct(“9s 30s f”) # Criar Struct com o formato do registro
+#Subprogramas
+def escrever(arq, matricula, nome, cr):
+bloco = Aluno.pack(matricula.encode(“utf-8”), nome.encode(“utf-8”), cr)
+arq.write(bloco)
+def ler(arq):
+bloco = arq.read(Aluno.size)
+campos = Aluno.unpack(bloco)
+return campos[0], campos[1].decode(“utf-8”).rstrip(chr(0)), campos[2]
+# Programa Principal
+with open(“arquivo.bin”, “w+b”) as arq:
+escrever(arq, “213031001”, “Alessandro”, 5.4) # chave 0
+escrever(arq, “114031012”, “Dayana”, 8.3) # chave 1
+escrever(arq, “214031173”, “Gustavo”, 7.2) # chave 2
+arq.seek(2 * Aluno.size) -> pega chave dois
+matricula, nome, cr = ler(arq)
+print(“Matricula:”, matricula, “Nome:”, nome, “CR:”, cr)
+
+bloco = arq.read(Aluno.size): Aqui, estamos lendo um bloco de bytes do arquivo. O tamanho desse bloco é determinado pela estrutura Aluno que você definiu anteriormente.
+campos = Aluno.unpack(bloco): Agora, estamos desempacotando os valores do bloco lido usando a estrutura Aluno. A função unpack retorna uma tupla com os valores desempacotados.
+return campos[0], campos[1].decode("utf-8").rstrip(chr(0)), campos[2]: Finalmente, estamos retornando os valores individuais:
+campos[0]: A matrícula (ainda em formato de bytes).
+
+campos[1].decode("utf-8").rstrip(chr(0)): O nome (convertido de bytes para uma string e removendo caracteres nulos).
+campos[2]: O CR (número de ponto flutuante).
+Em resumo, a função ler lê um bloco do arquivo binário, desempacota os valores da matrícula, nome e CR e retorna esses valores como uma tupla
